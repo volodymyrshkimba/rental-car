@@ -1,0 +1,30 @@
+.homePage {
+  background: url('../../../public/home-page-bg.jpg') no-repeat 0px 0px / cover;
+  text-align: center;
+  height: calc(100vh - 68px);
+}
+
+.title {
+  padding-top: 436px;
+  margin-bottom: 16px;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33;
+  margin-bottom: 40px;
+}
+
+.viewButton {
+  display: inline-block;
+  border-radius: 12px;
+  padding: 12px 99px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.25;
+  background-color: #3470ff;
+}

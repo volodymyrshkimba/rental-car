@@ -1,0 +1,9 @@
+.pageHeader {
+  background-color: #f2f4f7;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
