@@ -1,0 +1,11 @@
+.buttonLink {
+  display: inline-flex;
+  border-radius: 12px;
+  justify-content: center;
+  align-items: center;
+  width: 276px;
+  height: 44px;
+  font-weight: 600;
+  line-height: 1.25;
+  background-color: #3470ff;
+}

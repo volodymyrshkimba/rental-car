@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
 import css from './HomePage.module.css';
+import ButtonLink from '../../components/ButtonLink/ButtonLink';
 
 const HomePage = () => {
   return (
@@ -8,9 +8,7 @@ const HomePage = () => {
       <p className={css.subtitle}>
         Reliable and budget-friendly rentals for any journey
       </p>
-      <Link className={css.viewButton} to="/catalog">
-        View Catalog
-      </Link>
+      <ButtonLink to="/catalog">View Catalog</ButtonLink>
     </div>
   );
 };

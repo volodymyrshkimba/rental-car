@@ -1,6 +1,5 @@
 .item {
-  max-width: calc((100% / 4) - 32px);
-  color: black;
+  max-width: calc((100% - 96px) / 4);
   object-fit: cover;
 }
 

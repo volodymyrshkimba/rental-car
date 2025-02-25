@@ -1,6 +1,9 @@
+import ButtonLink from '../ButtonLink/ButtonLink';
+
 import css from './CarsItem.module.css';
 
 const CarsItem = ({
+  id,
   img,
   brand,
   model,
@@ -46,6 +49,7 @@ const CarsItem = ({
             <li>{editMileage(mileage)} km</li>
           </ul>
         </div>
+        <ButtonLink to={`/catalog/${id}`}>Read more</ButtonLink>
       </div>
     </li>
   );

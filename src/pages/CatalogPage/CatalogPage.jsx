@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { getAllCars } from '../../redux/cars/operations';
 import CarsList from '../../components/CarsList/CarsList';
 import Container from '../../components/Container/Container';
+import FiltersForm from '../../components/FiltersForm/FiltersForm';
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
@@ -12,11 +13,12 @@ const CatalogPage = () => {
   }, [dispatch]);
 
   return (
-    <div>
+    <>
       <Container>
+        <FiltersForm />
         <CarsList />
       </Container>
-    </div>
+    </>
   );
 };
 

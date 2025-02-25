@@ -1,0 +1,18 @@
+.select {
+  position: relative;
+  color: black;
+}
+
+.optionsList {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1;
+}
+
+.visible {
+  opacity: 1;
+  visibility: visible;
+}
