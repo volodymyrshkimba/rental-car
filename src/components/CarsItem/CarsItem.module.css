@@ -1,0 +1,3 @@
+.item {
+  max-width: calc((100% / 4) - 32px);
+}
