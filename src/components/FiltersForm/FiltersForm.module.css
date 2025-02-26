@@ -1,0 +1,58 @@
+.form {
+  display: flex;
+  max-width: 924px;
+  margin: 0 auto;
+  column-gap: 16px;
+  padding-top: 84px;
+  margin-bottom: 56px;
+}
+
+.label {
+  display: inline-block;
+  font-size: 12px;
+  line-height: 1.33;
+  color: #8d929a;
+  margin-bottom: 8px;
+}
+
+.mileageInputWrapper {
+  display: flex;
+  max-width: 320px;
+  height: 44px;
+  background-color: #f7f7f7;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+.mileageInputWrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: 100%;
+  background-color: #dadde1;
+}
+
+.mileageInput {
+  background-color: inherit;
+  border: none;
+  padding-left: 24px;
+  width: 100%;
+  position: relative;
+  outline: transparent;
+}
+
+.btn {
+  align-self: flex-end;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 156px;
+  height: 44px;
+  background-color: #3470ff;
+  border: none;
+  font-weight: 600;
+}
