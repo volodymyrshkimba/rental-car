@@ -10,10 +10,13 @@ const CarsList = () => {
 
   return (
     <ul className={css.list}>
-      {allCars !== null &&
+      {allCars !== null && allCars.length !== 0 ? (
         allCars.map(item => {
           return <CarsItem key={item.id} {...item} />;
-        })}
+        })
+      ) : (
+        <li className={css.notFound}>No cars available for your search</li>
+      )}
     </ul>
   );
 };

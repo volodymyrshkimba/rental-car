@@ -1,4 +1,5 @@
 import ButtonLink from '../ButtonLink/ButtonLink';
+import FavouriteButton from '../FavouriteButton/FavouriteButton';
 
 import css from './CarsItem.module.css';
 
@@ -28,6 +29,7 @@ const CarsItem = ({
 
   return (
     <li className={css.item}>
+      <FavouriteButton id={id} />
       <div className={css.imgWrapper}>
         <img className={css.image} src={img} alt={`${brand} ${model}`} />
       </div>
