@@ -33,6 +33,11 @@ a {
   color: inherit;
 }
 
+input,
+textarea {
+  padding: 0;
+}
+
 button {
   padding: 0;
   color: inherit;

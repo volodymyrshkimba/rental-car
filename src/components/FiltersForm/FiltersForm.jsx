@@ -17,7 +17,7 @@ const initialValues = {
   maxMileage: '',
 };
 
-const FiltersForm = () => {
+const FiltersForm = ({ page, setPage }) => {
   const dispatch = useDispatch();
   const brands = useSelector(selectAllBrands);
 
@@ -26,9 +26,10 @@ const FiltersForm = () => {
   }, [dispatch]);
 
   const handleSubmit = values => {
+    setPage(1);
     dispatch(changeFilter(initialState.filters));
     dispatch(changeFilter(values));
-    dispatch(getAllCars(1));
+    dispatch(getAllCars(page));
   };
 
   return (

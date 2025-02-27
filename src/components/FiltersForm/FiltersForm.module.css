@@ -43,6 +43,10 @@
   outline: transparent;
 }
 
+.mileageInput::placeholder {
+  color: #101828;
+}
+
 .btn {
   align-self: flex-end;
   border-radius: 12px;

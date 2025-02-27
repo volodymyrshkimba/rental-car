@@ -1,13 +1,17 @@
 .carInfoPage {
   padding-top: 84px;
+  padding-bottom: 104px;
 }
 
 .contentWrapper {
   display: flex;
 }
 
-.imageWrapper {
+.imageFormWrapper {
   max-width: 640px;
+}
+
+.imageWrapper {
   max-height: 512px;
   border-radius: 19px;
   overflow: hidden;

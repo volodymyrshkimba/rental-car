@@ -30,7 +30,7 @@ const CarInfoPage = () => {
     <div className={css.carInfoPage}>
       <Container>
         <div className={css.contentWrapper}>
-          <div className={css.imageForm}>
+          <div className={css.imageFormWrapper}>
             <div className={css.imageWrapper}>
               <img className={css.image} src={img} alt={`${brand} ${model}`} />
             </div>

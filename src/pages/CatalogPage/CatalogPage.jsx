@@ -26,7 +26,7 @@ const CatalogPage = () => {
       {loading && <Loader />}
 
       <Container>
-        <FiltersForm />
+        <FiltersForm page={page} setPage={setPage} />
         <CarsList />
         <LoadMore page={page} setPage={setPage} />
       </Container>
