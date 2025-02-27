@@ -8,8 +8,7 @@ import { selectAllBrands } from '../../redux/cars/selectors';
 
 import css from './FiltersForm.module.css';
 
-import { changeFilter } from '../../redux/filters/slice';
-import { selectAllFilters } from '../../redux/filters/selectors';
+import { changeFilter, initialState } from '../../redux/filters/slice';
 
 const initialValues = {
   brand: '',
@@ -21,17 +20,14 @@ const initialValues = {
 const FiltersForm = () => {
   const dispatch = useDispatch();
   const brands = useSelector(selectAllBrands);
-  const filters = useSelector(selectAllFilters);
 
   useEffect(() => {
     dispatch(getAllBrands());
   }, [dispatch]);
 
-  const handleChange = value => {
-    dispatch(changeFilter(value));
-  };
-
-  const handleSubmit = () => {
+  const handleSubmit = values => {
+    dispatch(changeFilter(initialState.filters));
+    dispatch(changeFilter(values));
     dispatch(getAllCars(1));
   };
 
@@ -48,7 +44,6 @@ const FiltersForm = () => {
             component={Select}
             options={brands}
             placeholder={'Choose a brand'}
-            onChange={handleChange}
           />
         </div>
         <div className={css.fieldWrapper}>
@@ -61,7 +56,6 @@ const FiltersForm = () => {
             component={Select}
             options={carsPrices}
             placeholder={'Choose a price'}
-            onChange={handleChange}
           />
         </div>
         <div className={css.fieldWrapper}>
@@ -75,20 +69,12 @@ const FiltersForm = () => {
               name="minMileage"
               type="text"
               placeholder="From"
-              value={filters.minMileage}
-              onChange={e => {
-                handleChange({ [e.target.name]: e.target.value });
-              }}
             />
             <Field
               className={css.mileageInput}
               name="maxMileage"
               type="text"
               placeholder="To"
-              value={filters.maxMileage}
-              onChange={e => {
-                handleChange({ [e.target.name]: e.target.value });
-              }}
             />
           </div>
         </div>

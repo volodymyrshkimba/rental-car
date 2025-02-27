@@ -1,29 +1,29 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+export const initialState = {
+  filters: {
+    brand: '',
+    rentalPrice: '',
+    minMileage: '',
+    maxMileage: '',
+  },
+  favourites: [],
+};
+
 const filtersSlice = createSlice({
   name: 'filters',
-  initialState: {
-    filters: {
-      brand: '',
-      rentalPrice: '',
-      minMileage: '',
-      maxMileage: '',
-    },
-    favourites: [],
-  },
+  initialState: initialState,
   reducers: {
     changeFilter: (state, action) => {
-      state.filters = { ...state.filters, ...action.payload };
+      state.filters = action.payload;
     },
     addFavourite: (state, action) => {
       state.favourites.push(action.payload);
     },
     deleteFavourite: (state, action) => {
-      const index = state.favourites.findIndex(
-        item => item.id === action.payload.id
+      state.favourites = state.favourites.filter(
+        item => item !== action.payload
       );
-
-      state.favourites.splice(index, 1);
     },
   },
 });

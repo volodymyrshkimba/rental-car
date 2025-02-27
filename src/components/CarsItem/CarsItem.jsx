@@ -6,6 +6,7 @@ import css from './CarsItem.module.css';
 const CarsItem = ({
   id,
   img,
+  favourite,
   brand,
   model,
   year,
@@ -29,7 +30,7 @@ const CarsItem = ({
 
   return (
     <li className={css.item}>
-      <FavouriteButton id={id} />
+      <FavouriteButton id={id} favourite={favourite} />
       <div className={css.imgWrapper}>
         <img className={css.image} src={img} alt={`${brand} ${model}`} />
       </div>

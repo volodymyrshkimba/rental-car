@@ -1,22 +1,24 @@
 import { useSelector } from 'react-redux';
-import { selectAllCars } from '../../redux/cars/selectors';
+import { selectAllCarsWithFavourites } from '../../redux/cars/selectors';
 
 import CarsItem from '../CarsItem/CarsItem';
 
 import css from './CarsList.module.css';
 
 const CarsList = () => {
-  const allCars = useSelector(selectAllCars);
+  const allCarsWithFavourites = useSelector(selectAllCarsWithFavourites);
 
   return (
     <ul className={css.list}>
-      {allCars !== null && allCars.length !== 0 ? (
-        allCars.map(item => {
+      {Array.isArray(allCarsWithFavourites) &&
+        allCarsWithFavourites.length === 0 && (
+          <li className={css.notFound}>No cars available for your search</li>
+        )}
+      {Array.isArray(allCarsWithFavourites) &&
+        allCarsWithFavourites.length !== 0 &&
+        allCarsWithFavourites.map(item => {
           return <CarsItem key={item.id} {...item} />;
-        })
-      ) : (
-        <li className={css.notFound}>No cars available for your search</li>
-      )}
+        })}
     </ul>
   );
 };

@@ -5,12 +5,9 @@ import Icon from '../Icon/Icon.jsx';
 import css from './Select.module.css';
 
 import clsx from 'clsx';
-import { selectAllFilters } from '../../redux/filters/selectors.js';
-import { useSelector } from 'react-redux';
 
-const Select = ({ options, placeholder, form, field, id, onChange }) => {
+const Select = ({ options, placeholder, form, field, id }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const filters = useSelector(selectAllFilters);
 
   return (
     <button
@@ -21,14 +18,11 @@ const Select = ({ options, placeholder, form, field, id, onChange }) => {
         setIsOpen(!isOpen);
       }}
     >
-      {field.name === 'rentalPrice' && (
-        <span className={css.placeholder}>
-          {filters.rentalPrice || placeholder}
-        </span>
-      )}
-      {field.name === 'brand' && (
-        <span className={css.placeholder}>{filters.brand || placeholder}</span>
-      )}
+      <span className={css.placeholder}>
+        {field.value && field.name === 'rentalPrice'
+          ? `To $${field.value}`
+          : field.value || placeholder}
+      </span>
       <div className={css.openArrow}>
         {isOpen ? (
           <Icon name="arrow-up" width={16} height={16} />
@@ -53,7 +47,6 @@ const Select = ({ options, placeholder, form, field, id, onChange }) => {
                   onClick={() => {
                     setIsOpen(false);
                     form.setFieldValue(field.name, item);
-                    onChange({ [field.name]: item });
                   }}
                 >
                   {item}
