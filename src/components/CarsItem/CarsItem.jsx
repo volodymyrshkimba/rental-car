@@ -1,3 +1,6 @@
+import { capitalizeText } from '../../utils/capitalizeText';
+import { editMileage } from '../../utils/editMileage';
+
 import ButtonLink from '../ButtonLink/ButtonLink';
 import FavouriteButton from '../FavouriteButton/FavouriteButton';
 
@@ -16,18 +19,6 @@ const CarsItem = ({
   type,
   mileage,
 }) => {
-  const editMileage = mileage => {
-    const splited = mileage.toString().split('');
-    splited.splice(1, 0, ' ');
-    return splited.join('');
-  };
-
-  const capitalizeText = text => {
-    const splited = text.toLowerCase().split('');
-    splited[0] = splited[0].toUpperCase();
-    return splited.join('');
-  };
-
   return (
     <li className={css.item}>
       <FavouriteButton id={id} favourite={favourite} />
@@ -43,8 +34,8 @@ const CarsItem = ({
         </div>
         <div className={css.desc}>
           <ul className={css.infoList}>
-            <li className={css.infoItem}>{address.split(',')[1]}</li>
-            <li className={css.infoItem}>{address.split(',')[2]}</li>
+            <li className={css.infoItem}>{address?.split(',')[1]}</li>
+            <li className={css.infoItem}>{address?.split(',')[2]}</li>
             <li className={css.infoItem}>{rentalCompany}</li>
           </ul>
           <ul className={css.infoList}>
