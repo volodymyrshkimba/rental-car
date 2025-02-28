@@ -86,3 +86,13 @@
   line-height: 1.2;
   margin-bottom: 20px;
 }
+
+.listItem {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.listItem:not(:last-child) {
+  margin-bottom: 16px;
+}

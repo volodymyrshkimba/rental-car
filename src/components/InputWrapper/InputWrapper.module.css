@@ -1,0 +1,38 @@
+.errorMessage {
+  position: absolute;
+  top: 95%;
+  left: 0;
+  padding-left: 10px;
+  color: #d9534f;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.wrapper {
+  position: relative;
+}
+
+.input {
+  display: block;
+  height: 48px;
+  width: 100%;
+  border-radius: 12px;
+  background-color: #f7f7f7;
+  border: none;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%;
+}
+
+.input::placeholder {
+  color: #8d929a;
+}
+
+.textarea {
+  padding-top: 12px;
+  resize: none;
+  height: 88px;
+}

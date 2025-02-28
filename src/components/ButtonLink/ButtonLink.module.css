@@ -8,4 +8,9 @@
   font-weight: 600;
   line-height: 1.25;
   background-color: #3470ff;
+  transition: background-color 100ms ease-in;
+}
+
+.buttonLink:hover {
+  background-color: #0b44cd;
 }

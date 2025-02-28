@@ -40,7 +40,7 @@ const CarsItem = ({
           </ul>
           <ul className={css.infoList}>
             <li className={css.infoItem}>{capitalizeText(type)}</li>
-            <li>{editMileage(mileage)} km</li>
+            <li>{editMileage(mileage, ' ')} km</li>
           </ul>
         </div>
         <ButtonLink to={`/catalog/${id}`}>Read more</ButtonLink>

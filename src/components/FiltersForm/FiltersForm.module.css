@@ -58,4 +58,9 @@
   background-color: #3470ff;
   border: none;
   font-weight: 600;
+  transition: background-color 100ms ease-in;
+}
+
+.btn:hover {
+  background-color: #0b44cd;
 }

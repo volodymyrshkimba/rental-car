@@ -20,35 +20,10 @@
 }
 
 .inputsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   margin-bottom: 24px;
-}
-
-.input {
-  display: block;
-  height: 48px;
-  width: 100%;
-  border-radius: 12px;
-  background-color: #f7f7f7;
-  border: none;
-  padding-left: 20px;
-  padding-right: 20px;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 125%;
-}
-
-.input:not(:last-child) {
-  margin-bottom: 16px;
-}
-
-.input::placeholder {
-  color: #8d929a;
-}
-
-.textarea {
-  padding-top: 12px;
-  resize: none;
-  height: 88px;
 }
 
 .btn {
@@ -60,4 +35,9 @@
   border: none;
   margin-left: auto;
   margin-right: auto;
+  transition: background-color 100ms ease-in;
+}
+
+.btn:hover {
+  background-color: #0b44cd;
 }

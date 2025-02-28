@@ -9,4 +9,9 @@
   font-weight: 600;
   color: #101828;
   background-color: transparent;
+  transition: border-color 100ms ease-in;
+}
+
+.btn:hover {
+  border-color: #0b44cd;
 }

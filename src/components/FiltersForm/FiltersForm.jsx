@@ -1,5 +1,5 @@
 import { Field, Formik, Form } from 'formik';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllBrands, getAllCars } from '../../redux/cars/operations';
 import Select from '../Select/Select';
@@ -9,6 +9,7 @@ import { selectAllBrands } from '../../redux/cars/selectors';
 import css from './FiltersForm.module.css';
 
 import { changeFilter, initialState } from '../../redux/filters/slice';
+import { editMileage } from '../../utils/editMileage';
 
 const initialValues = {
   brand: '',
@@ -20,16 +21,50 @@ const initialValues = {
 const FiltersForm = ({ page, setPage }) => {
   const dispatch = useDispatch();
   const brands = useSelector(selectAllBrands);
+  //   const [minMileageValue, setMinMileageValue] = useState('');
+  //   const [maxMileageValue, setMaxMileageValue] = useState('');
 
   useEffect(() => {
     dispatch(getAllBrands());
   }, [dispatch]);
 
+  //   const handleChange = e => {
+  //     const value = e.target.value;
+
+  //     switch (e.target.name) {
+  //       case 'minMileage':
+  //         if (!value.includes(',')) {
+  //           setMinMileageValue(editMileage(value, ','));
+  //         } else {
+  //           setMinMileageValue(value);
+  //         }
+  //         break;
+  //       case 'maxMileage':
+  //         if (!value.includes(',')) {
+  //           setMaxMileageValue(editMileage(value, ','));
+  //         } else {
+  //           setMaxMileageValue(value);
+  //         }
+  //         break;
+
+  //       default:
+  //     }
+  //   };
+
   const handleSubmit = values => {
     setPage(1);
     dispatch(changeFilter(initialState.filters));
+    //  dispatch(
+    //    changeFilter({
+    //      ...values,
+    //      minMileage: minMileageValue.split(',').join(''),
+    //      maxMileage: maxMileageValue.split(',').join(''),
+    //    })
+    //  );
     dispatch(changeFilter(values));
-    dispatch(getAllCars(page));
+    if (page === 1) {
+      dispatch(getAllCars(1));
+    }
   };
 
   return (
@@ -70,12 +105,16 @@ const FiltersForm = ({ page, setPage }) => {
               name="minMileage"
               type="text"
               placeholder="From"
+              //   onChange={handleChange}
+              //   value={minMileageValue}
             />
             <Field
               className={css.mileageInput}
               name="maxMileage"
               type="text"
               placeholder="To"
+              //   onChange={handleChange}
+              //   value={maxMileageValue}
             />
           </div>
         </div>
