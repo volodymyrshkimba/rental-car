@@ -19,8 +19,6 @@ const initialValues = {
 
 const RentForm = ({ model, brand }) => {
   const handleSubmit = (values, actions) => {
-    console.log(values);
-
     toast.success(
       `Your booking for ${brand} ${model} is being processed.\n\n We will confirm shortly.`,
       {
