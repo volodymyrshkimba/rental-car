@@ -1,14 +1,16 @@
 import { Field, Formik, Form } from 'formik';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllBrands, getAllCars } from '../../redux/cars/operations';
-import Select from '../Select/Select';
-import carsPrices from '../../carsPrices.json';
-import { selectAllBrands } from '../../redux/cars/selectors';
-
-import css from './FiltersForm.module.css';
 
 import { changeFilter, initialState } from '../../redux/filters/slice';
+import { getAllBrands, getAllCars } from '../../redux/cars/operations';
+import { selectAllBrands } from '../../redux/cars/selectors';
+
+import Select from '../Select/Select';
+
+import carsPrices from '../../carsPrices.json';
+import css from './FiltersForm.module.css';
+
 import {
   clearMileageInputWrapper,
   mileageInputWrapper,

@@ -1,7 +1,9 @@
-import { Route, Routes } from 'react-router-dom';
-import Header from './components/Header/Header';
-import HomePage from './pages/HomePage/HomePage';
 import { Suspense } from 'react';
+import { Route, Routes } from 'react-router-dom';
+
+import Header from './components/Header/Header';
+
+import HomePage from './pages/HomePage/HomePage';
 import CatalogPage from './pages/CatalogPage/CatalogPage';
 import CarInfoPage from './pages/CarInfoPage/CarInfoPage';
 

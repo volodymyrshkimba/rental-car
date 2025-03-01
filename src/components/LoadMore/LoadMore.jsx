@@ -1,6 +1,8 @@
 import { useSelector } from 'react-redux';
-import css from './LoadMore.module.css';
+
 import { selectTotalPages } from '../../redux/cars/selectors';
+
+import css from './LoadMore.module.css';
 
 const LoadMore = ({ page, setPage }) => {
   const totalPages = useSelector(selectTotalPages);

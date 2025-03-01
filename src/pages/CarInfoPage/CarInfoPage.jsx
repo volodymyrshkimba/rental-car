@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
 
 import { axiosInstance } from '../../axiosInstance';
 
@@ -13,7 +14,6 @@ import { editMileage } from '../../utils/editMileage';
 import { capitalizeText } from '../../utils/capitalizeText';
 
 import css from './CarInfoPage.module.css';
-import { Toaster } from 'react-hot-toast';
 
 const CarInfoPage = () => {
   const [loading, setLoading] = useState(false);

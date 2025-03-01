@@ -1,7 +1,7 @@
 import { ErrorMessage, Field } from 'formik';
+import clsx from 'clsx';
 
 import css from './InputWrapper.module.css';
-import clsx from 'clsx';
 
 const InputWrapper = ({ type, name, placeholder, ...props }) => {
   return (

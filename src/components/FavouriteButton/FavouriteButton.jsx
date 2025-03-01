@@ -1,8 +1,11 @@
 import { useDispatch, useSelector } from 'react-redux';
-import css from './FavouriteButton.module.css';
+
 import { selectAllFavourites } from '../../redux/filters/selectors';
 import { addFavourite, deleteFavourite } from '../../redux/filters/slice';
+
 import Icon from '../Icon/Icon';
+
+import css from './FavouriteButton.module.css';
 
 const FavouriteButton = ({ id, favourite }) => {
   const dispatch = useDispatch();

@@ -1,5 +1,6 @@
-import css from './HomePage.module.css';
 import ButtonLink from '../../components/ButtonLink/ButtonLink';
+
+import css from './HomePage.module.css';
 
 const HomePage = () => {
   return (
