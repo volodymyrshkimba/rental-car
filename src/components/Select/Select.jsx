@@ -38,6 +38,15 @@ const Select = ({ options, placeholder, form, field, id }) => {
         )}
       >
         <ul className={clsx(css.optionsList)}>
+          <li
+            className={css.option}
+            onClick={() => {
+              setIsOpen(false);
+              form.setFieldValue(field.name, '');
+            }}
+          >
+            ----
+          </li>
           {options !== null &&
             options.map(item => {
               return (
