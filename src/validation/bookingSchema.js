@@ -5,6 +5,6 @@ export const bookingSchema = Yup.object({
   email: Yup.string()
     .email('Email must be a valid email address.')
     .required('Email is required.'),
-  date: Yup.date().min(new Date(), 'Date must be in the future.'),
+  date: Yup.string(),
   comment: Yup.string(),
 });
