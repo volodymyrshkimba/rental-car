@@ -1,6 +1,5 @@
 import { Formik, Form } from 'formik';
 import toast from 'react-hot-toast';
-import dayjs from 'dayjs';
 
 import { DesktopDatePicker } from '@mui/x-date-pickers';
 
@@ -13,10 +12,9 @@ import css from './RentForm.module.css';
 const initialValues = {
   name: '',
   email: '',
-  date: '',
+  date: null,
   comment: '',
 };
-
 const RentForm = ({ model, brand }) => {
   const handleSubmit = (values, actions) => {
     toast.success(
@@ -34,7 +32,7 @@ const RentForm = ({ model, brand }) => {
       onSubmit={handleSubmit}
       validationSchema={bookingSchema}
     >
-      {({ setFieldValue }) => {
+      {({ setFieldValue, values }) => {
         return (
           <Form className={css.form}>
             <p className={css.title}>Book your car now</p>
@@ -49,12 +47,9 @@ const RentForm = ({ model, brand }) => {
                 placeholder={'Email*'}
               />
               <DesktopDatePicker
-                className={css.dateInput}
-                name="date"
+                value={values.date}
                 label="Booking date"
-                onChange={value =>
-                  setFieldValue('date', dayjs(value.$d).format('DD/MM/YYYY'))
-                }
+                onChange={value => setFieldValue('date', value)}
               />
               <InputWrapper
                 as={'textarea'}
