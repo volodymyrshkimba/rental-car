@@ -1,3 +1,4 @@
+[](https://github.com/volodymyrshkimba/rental-car/blob/main/public/favicon.png?raw=true)
 # Rental Car
 
 ## Project Description
